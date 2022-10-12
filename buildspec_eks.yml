@@ -23,7 +23,8 @@ phases:
       - echo check config 
       - kubectl config view --minify
       - echo check kubectl access
-      - aws eks update-kubeconfig --name $AWS_CLUSTER_NAME --region $AWS_DEFAULT_REGION
+      - cd /root/.kube
+      - cat config
       #- kubectl describe configmaps aws-auth -n kube-system
       - cd eks_cicd/
       - kubectl get configmaps aws-auth -n kube-system -o yaml > aws-auth.yaml
