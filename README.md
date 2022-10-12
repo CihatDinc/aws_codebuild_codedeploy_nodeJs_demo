@@ -43,4 +43,3 @@ node-app-youtube-demo
 
 aws deploy push --application-name NodeAppServerDeployment --s3-location "s3://node-app-youtube-demo/codedeploydemo/app.zip" --ignore-hidden-files 
 
-test
