@@ -23,7 +23,10 @@ phases:
       - echo check config 
       - kubectl config view --minify
       - echo check kubectl access
-      - kubectl describe configmaps aws-auth -n kube-system
+      #- kubectl describe configmaps aws-auth -n kube-system
+      - cd eks_cicd/
+      - kubectl get configmaps aws-auth -n kube-system -o yaml > aws-auth.yaml
+      - cd ..
       - kubectl get svc
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
