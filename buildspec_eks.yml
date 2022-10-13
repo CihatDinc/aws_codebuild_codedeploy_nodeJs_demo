@@ -23,11 +23,11 @@ phases:
       - echo check config 
       - kubectl config view --minify
       - echo check kubectl access
-      - cd /root/.kube
-      - cat config
+      #- cd /root/.kube
+      #- cat config
       #- kubectl describe configmaps aws-auth -n kube-system
       - pwd
-      - cd /aws_codebuild_codedeploy_nodeJs_demo/eks_cicd
+      - cd eks_cicd
       - pwd
       - kubectl get configmaps aws-auth -n kube-system -o yaml > aws-auth.yaml
       - cd ..
