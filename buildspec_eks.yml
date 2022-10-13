@@ -26,9 +26,12 @@ phases:
       - cd /root/.kube
       - cat config
       #- kubectl describe configmaps aws-auth -n kube-system
-      - cd eks_cicd/
+      - pwd
+      - cd /aws_codebuild_codedeploy_nodeJs_demo/eks_cicd
+      - pwd
       - kubectl get configmaps aws-auth -n kube-system -o yaml > aws-auth.yaml
       - cd ..
+      - pwd
       - kubectl get svc
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
